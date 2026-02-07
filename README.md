@@ -1,4 +1,4 @@
-# SOS Web COPOM
+# Cidadão+
 
 > Aplicativo acessível para registro de ocorrências via internet, integrado ao COPOM, voltado a pessoas que não conseguem realizar ligações de voz, mas têm acesso à rede de dados.[web:2][web:5]
 
