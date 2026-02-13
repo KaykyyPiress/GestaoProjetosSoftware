@@ -1,3 +1,11 @@
+
+<div align="center">
+
+  <img width="700" height="600" alt="a9652bcd-b406-49f3-8b95-d833f0a63a37" src="https://github.com/user-attachments/assets/0f8d325f-6f43-41c6-a253-1b236fd7adf9" />
+  <h1>Cidadão+</h1>
+  <p>Seu aliado nas urgências</p>
+</div>
+
 # Cidadão+
 
 > Aplicativo acessível para registro de ocorrências via internet, integrado ao COPOM, voltado a pessoas que não conseguem realizar ligações de voz, mas têm acesso à rede de dados.
@@ -6,7 +14,7 @@
 
 ## Visão geral
 
-O **SOS** Web COPOM é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências médicas imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.[web:2][web:4]  
+O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências médicas imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.[web:2][web:4]  
 A solução busca apoiar principalmente pessoas que, em determinadas situações, não têm acesso à rede móvel tradicional (voz/SMS), mas conseguem se conectar à internet.[web:2][web:5]
 
 ---
