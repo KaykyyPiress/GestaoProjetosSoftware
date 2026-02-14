@@ -15,24 +15,23 @@
 ## Visão geral
 
 O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências médicas imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.[web:2][web:4]  
-A solução busca apoiar principalmente pessoas que, em determinadas situações, não têm acesso à rede móvel tradicional (voz/SMS), mas conseguem se conectar à internet.[web:2][web:5]
+A solução busca apoiar principalmente pessoas que, em determinadas situações, não têm acesso à rede móvel tradicional (voz/SMS), mas conseguem se conectar à internet.
 
 ---
 
 ## Problema e motivação
 
 - Muitos serviços de emergência ainda dependem de chamadas de voz, o que exclui pessoas com deficiência auditiva, limita quem está sem sinal de telefonia ou se encontra em situação em que falar é arriscado.[web:2][web:9]  
-- Ao mesmo tempo, há cenários em que a conexão de dados (Wi‑Fi ou rede fixa) está disponível, mesmo sem cobertura de rede móvel.[web:2][web:5]  
-- Faltam canais digitais simples, acessíveis e padronizados para enviar informações de ocorrência diretamente aos centros de operações de segurança pública.[web:2][web:5]
+- Ao mesmo tempo, há cenários em que a conexão de dados (Wi‑Fi ou rede fixa) está disponível, mesmo sem cobertura de rede móvel.
+- Faltam canais digitais simples, acessíveis e padronizados para enviar informações de ocorrência diretamente aos centros de operações de segurança pública.
 
 ---
 
 ## Objetivo do aplicativo
 
-- Permitir que o usuário registrado envie um “ticket” de ocorrência para o COPOM, com dados como tipo de ocorrência, localização e descrição do fato.[web:5]  
-- Garantir uma interface mais acessível, com textos claros e fluxo guiado, voltada a pessoas com diferentes necessidades de comunicação.[web:2][web:4]  
-- Apoiar o trabalho do COPOM na triagem e administração de ocorrências, sem substituir canais já existentes para urgências de risco imediato à vida.[web:2][web:9]
-
+- Permitir que o usuário registrado envie um “ticket” de ocorrência para o COPOM, com dados como tipo de ocorrência, localização e descrição do fato. 
+- Garantir uma interface mais acessível, com textos claros e fluxo guiado, voltada a pessoas com diferentes necessidades de comunicação.  
+- Apoiar o trabalho do COPOM na triagem e administração de ocorrências, sem substituir canais já existentes para urgências de risco imediato à vida.
 ---
 
 ## Escopo do projeto (versão atual)
@@ -42,22 +41,21 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Envio das informações ao backend (simulação de envio ao COPOM por API, mensagem ou e‑mail institucional).  
 - Tela de acompanhamento simples do status da ocorrência (ex.: recebida, em análise, encaminhada).  
 
-> Observação: o projeto está em desenvolvimento, portanto telas, fluxos e regras de negócio ainda podem mudar ao longo das próximas sprints.[web:6][web:8]
+> Observação: o projeto está em desenvolvimento, portanto telas, fluxos e regras de negócio ainda podem mudar ao longo das próximas sprints.
 
 ---
 
 ## Não é objetivo do sistema
 
-- Atender urgências médicas ou situações de risco iminente de morte (não substitui SAMU, Corpo de Bombeiros, etc.).[web:3][web:5]  
-- Substituir completamente os canais oficiais de emergência existentes; ele atua como um canal complementar focado em acessibilidade.[web:2][web:9]
-
+- Atender urgências médicas ou situações de risco iminente de morte (não substitui SAMU, Corpo de Bombeiros, etc.).
+- Substituir completamente os canais oficiais de emergência existentes; ele atua como um canal complementar focado em acessibilidade.
 ---
 
 ## Público-alvo
 
-- Pessoas com deficiência auditiva ou com limitações de fala, que encontram barreiras na comunicação por telefone.[web:2][web:4]  
-- Usuários temporariamente sem sinal de rede móvel, mas com acesso à internet via Wi‑Fi ou rede cabeada.[web:2][web:5]  
-- Cidadãos que preferem registrar ocorrências por texto, com mais detalhes e calma, quando não se trata de urgência imediata.[web:2][web:9]
+- Pessoas com deficiência auditiva ou com limitações de fala, que encontram barreiras na comunicação por telefone.
+- Usuários temporariamente sem sinal de rede móvel, mas com acesso à internet via Wi‑Fi ou rede cabeada.
+- Cidadãos que preferem registrar ocorrências por texto, com mais detalhes e calma, quando não se trata de urgência imediata.
 
 ---
 
@@ -78,14 +76,14 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Frontend: (ex.: React Native, Flutter, ou web responsivo).  
 - Backend: (ex.: Node.js, Java Spring, etc.).  
 - Banco de dados: (ex.: PostgreSQL, MySQL).  
-- Metodologia: Scrum com apoio de Kanban para visualização do fluxo de trabalho.[web:6][web:8]
+- Metodologia: Scrum com apoio de Kanban para visualização do fluxo de trabalho.
 
 ---
 
 ## Metodologia de desenvolvimento
 
-- O projeto é desenvolvido utilizando princípios de Scrum, com papéis bem definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e sprints curtas para entrega incremental.[web:6][web:10]  
-- O quadro Kanban é utilizado para visualizar tarefas nas etapas “A Fazer”, “Em Progresso” e “Concluído”, facilitando o acompanhamento pela equipe.[web:6][web:8]
+- O projeto é desenvolvido utilizando princípios de Scrum, com papéis bem definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e sprints curtas para entrega incremental. 
+- O quadro Kanban é utilizado para visualizar tarefas nas etapas “A Fazer”, “Em Progresso” e “Concluído”, facilitando o acompanhamento pela equipe.
 
 ---
 
@@ -109,6 +107,6 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Próximos passos
 
-- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados).[web:2][web:4]  
+- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados).
 - Integrar de forma mais realista com um backend que simule o COPOM (fila de atendimento, triagem e histórico de ocorrências).  
-- Elaborar documentação complementar: diagrama de casos de uso, diagrama de classes e descrição dos requisitos funcionais e não funcionais.[web:1]
+- Elaborar documentação complementar: diagrama de casos de uso, diagrama de classes e descrição dos requisitos funcionais e não funcionais.
