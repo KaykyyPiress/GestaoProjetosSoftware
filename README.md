@@ -14,7 +14,7 @@
 
 ## Visão geral
 
-O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências médicas imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.
+O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.
 A solução busca apoiar principalmente pessoas que, em determinadas situações, não têm acesso à rede móvel tradicional (voz/SMS), mas conseguem se conectar à internet.
 
 ---
