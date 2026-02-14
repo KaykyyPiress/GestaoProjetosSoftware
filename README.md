@@ -1,12 +1,11 @@
 
 <div align="center">
 
-  <img width="700" height="600" alt="a9652bcd-b406-49f3-8b95-d833f0a63a37" src="https://github.com/user-attachments/assets/0f8d325f-6f43-41c6-a253-1b236fd7adf9" />
+  <img width="700" height="600" alt="549714179-0f8d325f-6f43-41c6-a253-1b236fd7adf9" src="https://github.com/user-attachments/assets/86d7ade0-feff-44f7-9666-89a15674ee90" />
   <h1>Cidadão+</h1>
   <p>Seu aliado nas urgências</p>
 </div>
 
-# Cidadão+
 
 > Aplicativo acessível para registro de ocorrências via internet, integrado ao COPOM, voltado a pessoas que não conseguem realizar ligações de voz, mas têm acesso à rede de dados.
 
@@ -39,7 +38,7 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Cadastro de usuário (dados pessoais básicos e contato).  
 - Registro de ocorrência com formulário estruturado (tipo, local, descrição).  
 - Envio das informações ao backend (simulação de envio ao COPOM por API, mensagem ou e‑mail institucional).  
-- Tela de acompanhamento simples do status da ocorrência (ex.: recebida, em análise, encaminhada).  
+ 
 
 > Observação: o projeto está em desenvolvimento, portanto telas, fluxos e regras de negócio ainda podem mudar ao longo das próximas sprints.
 
@@ -53,7 +52,7 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Público-alvo
 
-- Pessoas com deficiência auditiva ou com limitações de fala, que encontram barreiras na comunicação por telefone.
+- Pessoas que encontram barreiras na comunicação por telefone.
 - Usuários temporariamente sem sinal de rede móvel, mas com acesso à internet via Wi‑Fi ou rede cabeada.
 - Cidadãos que preferem registrar ocorrências por texto, com mais detalhes e calma, quando não se trata de urgência imediata.
 
@@ -71,13 +70,14 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Tecnologias
 
+<!--
 > Ajuste esta lista de acordo com o stack real do projeto.
 
 - Frontend: (ex.: React Native, Flutter, ou web responsivo).  
 - Backend: (ex.: Node.js, Java Spring, etc.).  
 - Banco de dados: (ex.: PostgreSQL, MySQL).  
 - Metodologia: Scrum com apoio de Kanban para visualização do fluxo de trabalho.
-
+-->
 ---
 
 ## Metodologia de desenvolvimento
@@ -89,10 +89,11 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Equipe
 
+- **Rafael Dias** – P.O. (Product Owner).
+- **Kayky Pires** – S.M. (Scrum Master).   
 - **Beatriz Cristina** – Dev (Desenvolvedora).  
-- **Kayky Pires** – Scrum Master.  
 - **Larissa Fiuza** – Dev (Desenvolvedora).  
-- **Rafael Dias** – P.O. (Product Owner).  
+
 
 ---
 
@@ -107,6 +108,5 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Próximos passos
 
-- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados).
-- Integrar de forma mais realista com um backend que simule o COPOM (fila de atendimento, triagem e histórico de ocorrências).  
-- Elaborar documentação complementar: diagrama de casos de uso, diagrama de classes e descrição dos requisitos funcionais e não funcionais.
+- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados). 
+
