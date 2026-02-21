@@ -84,6 +84,7 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 - O projeto é desenvolvido utilizando princípios de Scrum, com papéis bem definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e sprints curtas para entrega incremental. 
 - O quadro Kanban é utilizado para visualizar tarefas nas etapas “A Fazer”, “Em Progresso” e “Concluído”, facilitando o acompanhamento pela equipe.
+- Quadro Jira: https://cidadao-plus.atlassian.net/jira/software/projects/CID/summary
 
 ---
 
