@@ -13,24 +13,25 @@
 
 ## Visão geral
 
-O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.
+O **Cidadão+** é um protótipo de aplicativo voltado ao registro de ocorrências (e não urgências imediatas), permitindo que o usuário envie uma mensagem estruturada ao COPOM sem precisar realizar uma chamada telefônica.  
 A solução busca apoiar principalmente pessoas que, em determinadas situações, não têm acesso à rede móvel tradicional (voz/SMS), mas conseguem se conectar à internet.
 
 ---
 
 ## Problema e motivação
 
-- Muitos serviços de emergência ainda dependem de chamadas de voz, o que exclui pessoas com deficiência auditiva, limita quem está sem sinal de telefonia ou se encontra em situação em que falar é arriscado. 
-- Ao mesmo tempo, há cenários em que a conexão de dados (Wi‑Fi ou rede fixa) está disponível, mesmo sem cobertura de rede móvel.
-- Faltam canais digitais simples, acessíveis e padronizados para enviar informações de ocorrência diretamente aos centros de operações de segurança pública.
+- Muitos serviços de emergência ainda dependem de chamadas de voz, o que exclui pessoas com barreiras de fala ou audição e limita quem está sem sinal de telefonia.  
+- Ao mesmo tempo, há cenários em que a conexão de dados (Wi‑Fi ou rede fixa) está disponível, mesmo sem cobertura de rede móvel.  
+- Faltam canais digitais simples e acessíveis para enviar informações de ocorrência diretamente aos centros de operações de segurança pública.
 
 ---
 
 ## Objetivo do aplicativo
 
-- Permitir que o usuário registrado envie um “ticket” de ocorrência para o COPOM, com dados como tipo de ocorrência, localização e descrição do fato. 
-- Garantir uma interface mais acessível, com textos claros e fluxo guiado, voltada a pessoas com diferentes necessidades de comunicação.  
+- Permitir que o usuário registrado envie um “ticket” de ocorrência para o COPOM, com dados como tipo de ocorrência, localização e descrição do fato.  
+- Garantir uma interface acessível, com textos claros e fluxo guiado, voltada a pessoas com diferentes necessidades de comunicação.  
 - Apoiar o trabalho do COPOM na triagem e administração de ocorrências, sem substituir canais já existentes para urgências de risco imediato à vida.
+
 ---
 
 ## Escopo do projeto (versão atual)
@@ -38,7 +39,6 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Cadastro de usuário (dados pessoais básicos e contato).  
 - Registro de ocorrência com formulário estruturado (tipo, local, descrição).  
 - Envio das informações ao backend (simulação de envio ao COPOM por API, mensagem ou e‑mail institucional).  
- 
 
 > Observação: o projeto está em desenvolvimento, portanto telas, fluxos e regras de negócio ainda podem mudar ao longo das próximas sprints.
 
@@ -46,14 +46,15 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Não é objetivo do sistema
 
-- Atender urgências médicas ou situações de risco iminente de morte (não substitui SAMU, Corpo de Bombeiros, etc.).
+- Atender urgências médicas ou situações de risco iminente de morte (não substitui SAMU, Corpo de Bombeiros, etc.).  
 - Substituir completamente os canais oficiais de emergência existentes; ele atua como um canal complementar focado em acessibilidade.
+
 ---
 
 ## Público-alvo
 
-- Pessoas que encontram barreiras na comunicação por telefone.
-- Usuários temporariamente sem sinal de rede móvel, mas com acesso à internet via Wi‑Fi ou rede cabeada.
+- Pessoas que encontram barreiras na comunicação por telefone.  
+- Usuários temporariamente sem sinal de rede móvel, mas com acesso à internet via Wi‑Fi ou rede cabeada.  
 - Cidadãos que preferem registrar ocorrências por texto, com mais detalhes e calma, quando não se trata de urgência imediata.
 
 ---
@@ -78,23 +79,23 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Banco de dados: (ex.: PostgreSQL, MySQL).  
 - Metodologia: Scrum com apoio de Kanban para visualização do fluxo de trabalho.
 -->
+
 ---
 
 ## Metodologia de desenvolvimento
 
-- O projeto é desenvolvido utilizando princípios de Scrum, com papéis bem definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e sprints curtas para entrega incremental. 
-- O quadro Kanban é utilizado para visualizar tarefas nas etapas “A Fazer”, “Em Progresso” e “Concluído”, facilitando o acompanhamento pela equipe.
-- Quadro Jira: https://cidadao-plus.atlassian.net/jira/software/projects/CID/summary
+- O projeto é desenvolvido utilizando princípios de Scrum, com papéis bem definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e sprints curtas para entrega incremental.  
+- O quadro Kanban é utilizado para visualizar tarefas nas etapas “A Fazer”, “Em Progresso” e “Concluído”, facilitando o acompanhamento pela equipe.  
+- Quadro Jira: [https://cidadao-plus.atlassian.net/jira/software/projects/CID/summary](https://cidadao-plus.atlassian.net/jira/software/projects/CID/summary)
 
 ---
 
 ## Equipe
 
-- **Rafael Dias** – P.O. (Product Owner).
-- **Kayky Pires** – S.M. (Scrum Master).   
+- **Rafael Dias** – P.O. (Product Owner).  
+- **Kayky Pires** – S.M. (Scrum Master).  
 - **Beatriz Cristina** – Dev (Desenvolvedora).  
 - **Larissa Fiuza** – Dev (Desenvolvedora).  
-
 
 ---
 
@@ -109,5 +110,6 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Próximos passos
 
-- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados). 
+- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados).  
+- Detalhar integrações com o COPOM e evoluir o backend para aproximar o fluxo do cenário real.
 
