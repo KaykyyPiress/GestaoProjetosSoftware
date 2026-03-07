@@ -108,8 +108,13 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ---
 
-## Próximos passos
+## Próximos passos (Sprint 1)
 
-- Implementar melhorias de acessibilidade na interface (contraste, texto alternativo, fluxos simplificados).  
-- Detalhar integrações com o COPOM e evoluir o backend para aproximar o fluxo do cenário real.
+- Implementar a tela de **cadastro de cidadão** com validação de campos obrigatórios e mensagens de erro/sucesso.  
+- Criar a **tabela de cidadãos** e regras de validação (CPF válido, unicidade, regras de senha) no backend. 
+- Implementar a tela de **login do cidadão**, com mensagens de erro e redirecionamento para a área principal após autenticação. 
+- Desenvolver a lógica de **autenticação** no backend (busca e validação de credenciais na tabela de cidadãos).
+- Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.  
+- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM. 
+
 
