@@ -117,4 +117,5 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 - Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.  
 - Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM. 
 
+<img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
 
