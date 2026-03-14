@@ -11,7 +11,10 @@ import {
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
-import firebase from '../config/config';
+// import firebase from '../config/config';
+import { supabase } from '../components/connectBD'
+
+console.log("URL:", supabase.supabaseUrl)
 
 export default class Cadastro extends React.Component {
   constructor(props) {
@@ -22,77 +25,113 @@ export default class Cadastro extends React.Component {
       email: '', 
       senha: '', 
       confirmarSenha: '',
-      carregando: false 
+      carregando: false
     };
-  }
+    console.log("entrou na função")
 
-  /*cadastrarUsuario = () => {
-    const { nome, cpf, email, senha, confirmarSenha } = this.state;
+    this.validarCPF = (cpf) => {
+      cpf = cpf.replace(/[^\d]+/g, '')
 
-    // --- VALIDAÇÕES OBRIGATÓRIAS ---
-    if (!nome || !cpf || !email || !senha || !confirmarSenha) {
-      Alert.alert('Campos obrigatórios', 'Por favor, preencha todos os campos (Nome, CPF, E-mail e Senha).');
-      return;
+      if (cpf.length !== 11) return false
+
+      if (/^(\d)\1+$/.test(cpf)) return false
+
+      let soma = 0
+      let resto
+
+      for (let i = 1; i <= 9; i++)
+        soma += parseInt(cpf.substring(i - 1, i)) * (11 - i)
+
+      resto = (soma * 10) % 11
+
+      if (resto === 10 || resto === 11)
+        resto = 0
+
+      if (resto !== parseInt(cpf.substring(9, 10)))
+        return false
+
+      soma = 0
+
+      for (let i = 1; i <= 10; i++)
+        soma += parseInt(cpf.substring(i - 1, i)) * (12 - i)
+
+      resto = (soma * 10) % 11
+
+      if (resto === 10 || resto === 11)
+        resto = 0
+
+      if (resto !== parseInt(cpf.substring(10, 11)))
+        return false
+
+      return true
     }
 
-    if (cpf.length < 11) {
-      Alert.alert('CPF Inválido', 'Por favor, insira um CPF válido com 11 dígitos.');
-      return;
-    }
+    this.cadastrarUsuario = async () => {
+      const { nome, cpf, email, senha, confirmarSenha } = this.state
 
-    if (senha !== confirmarSenha) {
-      Alert.alert('Erro nas senhas', 'A senha e a confirmação não são iguais.');
-      return;
-    }
+      // Verifica se os campos foram preenchidos
+      if (!nome || !cpf || !email || !senha || !confirmarSenha) {
+        Alert.alert('Atenção', 'Preencha todos os campos')
+        return
+      }
 
-    this.setState({ carregando: true });
+      // valida CPF
+      if (!this.validarCPF(cpf)) {
+        Alert.alert("CPF inválido", "Digite um CPF válido")
+        return
+      }
 
-    // 1. Cria o usuário no Firebase Auth
-    firebase.auth().createUserWithEmailAndPassword(email.trim().toLowerCase(), senha)
-      .then((userCredential) => {
-        const uid = userCredential.user.uid;
+      // verifica se já existe
+      const { data: cpfExistente, error: erroCpf } = await supabase
+        .from('table_cidadao')
+        .select('cpf_cidadao')
+        .eq('cpf_cidadao', cpf)
+        .limit(1)
 
-        // 2. Salva os dados adicionais (Nome e CPF) no Database/Firestore
-        // Aqui usamos o exemplo de salvamento que você tinha no projeto de pacientes
-        firebase.database().ref('usuarios/' + uid).set({
-          nome: nome,
-          cpf: cpf,
-          email: email.toLowerCase(),
-          tipo: 'cidadao'
-        });
+      if (erroCpf) {
+        Alert.alert("Erro", "Erro ao verificar CPF")
+        return
+      }
 
-        Alert.alert(
-          'Sucesso!', 
-          `Bem-vindo ao CIDADÃO+, ${nome}! Sua conta foi criada.`,
-          [{ text: 'Ir para Login', onPress: () => this.props.navigation.navigate('LoginTab') }]
-        );
+      if (cpfExistente.length > 0) {
+        Alert.alert("CPF já cadastrado", "Este CPF já existe.")
+        return
+      }
+
+      // se passou nas validações → insere
+      const { data, error } = await supabase
+        .from('table_cidadao')
+        .insert([
+          { nome_cidadao: nome,
+            cpf_cidadao: cpf, 
+            email_cidadao: email, 
+            senha_cidadao: senha }
+        ])
+        .select()
+      
+      this.setState({ carregando: false })
+      console.log("funcionou")
+      if (error) {
+        console.log('Erro ao cadastrar:', error)
+        Alert.alert('Erro', error.message)
+        return
+      }
+
+
+      console.log('Usuário cadastrado:', data)
+      Alert.alert('Sucesso', 'Cadastro realizado com sucesso!')
+
+      this.setState({
+        nome: '',
+        cpf: '',
+        email: '',
+        senha: '',
+        confirmarSenha: '',
+        carregando: false
       })
-      .catch((error) => {
-        Alert.alert('Erro', 'Não foi possível cadastrar: ' + error.message);
-      })
-      .finally(() => {
-        this.setState({ carregando: false });
-      });
-  }*/
-
-  cadastrarUsuario = () => {
-    const { nome, cpf, email, senha } = this.state;
-
-    if (!nome || !cpf || !email || !senha) {
-      Alert.alert('Aviso', 'Preencha os campos para testar o fluxo.');
-      return;
     }
-
-    Alert.alert(
-      'Sucesso (Modo Teste)', 
-      `Usuário ${nome} criado com sucesso!`,
-      [{ text: 'OK', onPress: () => this.props.navigation.navigate('LoginTab') }]
-    );
-    
-    /* Quando estiver pronto para o Firebase, usaremos:
-    firebase.auth().createUserWithEmailAndPassword(...)
-    */
   }
+  
 
   render() {
     return (
@@ -123,7 +162,7 @@ export default class Cadastro extends React.Component {
             <Text style={styles.label}>CPF:</Text>
             <TextInput 
               style={styles.input} 
-              placeholder="000.000.000-00" 
+              placeholder="00000000000" 
               keyboardType="numeric"
               maxLength={11} // Limita a 11 números
               onChangeText={(txt) => this.setState({ cpf: txt })}
