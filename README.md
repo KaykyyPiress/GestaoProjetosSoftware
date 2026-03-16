@@ -119,3 +119,12 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 <img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
 
+
+
+## 📱 Demonstração
+
+<div align="center">
+  <img src="./PDFs/Demo.gif" width="300" alt="Demo do app Cidadão+"/>
+</div>
+
+
