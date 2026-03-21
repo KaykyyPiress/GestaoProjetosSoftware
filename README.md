@@ -101,21 +101,27 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 ## Status do projeto
 
-- Projeto em andamento, com foco atual em:  
-  - Refinar casos de uso e fluxos principais do usuário.  
-  - Prototipar telas com foco em acessibilidade.  
-  - Implementar o fluxo mínimo de registro e envio de ocorrências.  
-
+~~- Projeto em andamento, com foco atual em:~~
+  ~~- Refinar casos de uso e fluxos principais do usuário.~~  
+  ~~- Prototipar telas com foco em acessibilidade.~~
+  ~~- Implementar o fluxo mínimo de registro e envio de ocorrências.~~  
+- Implementado:
+  - Front-End e Back-End funcional.
+  - Conexão com banco de dados.
+  - Histórias de usuário testadas e confirmadas.
 ---
 
 ## Próximos passos (Sprint 1)
 
-- Implementar a tela de **cadastro de cidadão** com validação de campos obrigatórios e mensagens de erro/sucesso.  
-- Criar a **tabela de cidadãos** e regras de validação (CPF válido, unicidade, regras de senha) no backend. 
-- Implementar a tela de **login do cidadão**, com mensagens de erro e redirecionamento para a área principal após autenticação. 
-- Desenvolver a lógica de **autenticação** no backend (busca e validação de credenciais na tabela de cidadãos).
-- Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.  
-- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM. 
+~~- Implementar a tela de **cadastro de cidadão** com validação de campos obrigatórios e mensagens de erro/sucesso.~~
+~~- Criar a **tabela de cidadãos** e regras de validação (CPF válido, unicidade, regras de senha) no backend.~~
+~~- Implementar a tela de **login do cidadão**, com mensagens de erro e redirecionamento para a área principal após autenticação.~~ 
+~~- Desenvolver a lógica de **autenticação** no backend (busca e validação de credenciais na tabela de cidadãos).~~
+~~- Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.~~  
+~~- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM.~~ 
+
+- Implementar conexão com email após cadastro
+
 
 <img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
 
