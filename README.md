@@ -109,21 +109,56 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
   - Front-End e Back-End funcional.
   - Conexão com banco de dados.
   - Histórias de usuário testadas e confirmadas.
+- Futuras implementações:
+  - Envio de confirmação por email para o usuário.
+  - Visualizações das ocorrências feitas pelo usuário(histórico).
+  - Dashbord para funcionário COPOM.
+    
 ---
 
 ## Próximos passos (Sprint 1)
 
-~~- Implementar a tela de **cadastro de cidadão** com validação de campos obrigatórios e mensagens de erro/sucesso.~~
-~~- Criar a **tabela de cidadãos** e regras de validação (CPF válido, unicidade, regras de senha) no backend.~~
-~~- Implementar a tela de **login do cidadão**, com mensagens de erro e redirecionamento para a área principal após autenticação.~~ 
-~~- Desenvolver a lógica de **autenticação** no backend (busca e validação de credenciais na tabela de cidadãos).~~
-~~- Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.~~  
-~~- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM.~~ 
+-  ~~- Implementar a tela de **cadastro de cidadão** com validação de campos obrigatórios e mensagens de erro/sucesso.~~
+-  ~~- Criar a **tabela de cidadãos** e regras de validação (CPF válido, unicidade, regras de senha) no backend.~~
+-  ~~- Implementar a tela de **login do cidadão**, com mensagens de erro e redirecionamento para a área principal após -  autenticação.~~ 
+-  ~~- Desenvolver a lógica de **autenticação** no backend (busca e validação de credenciais na tabela de cidadãos).~~
+ -   ~~- Implementar a tela de **registro de ocorrência** (tipo, descrição, localização, validação de campos) e envio.~~  
+-  ~~- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM.~~ 
 
 - Implementar conexão com email após cadastro
 
+  
+## Próximos passos (Sprint 2)
+- Implementar a funcionalidade de envio de confirmação por e-mail após o registro de ocorrência, incluindo template de mensagem e integração com serviço de e-mail.
+-  Criar a tela de histórico de ocorrências para o cidadão, permitindo visualização detalhada (data, tipo, status) e filtros de busca.
+-  Implementar o dashboard para funcionários do COPOM, com métricas principais (quantidade de ocorrências, status).
+-  Integrar o dashboard de ocorrências, permitindo atualização em tempo real dos dados exibidos.
+
+  
 
 <img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
+
+## Planning Poker(Sprint2)
+
+
+- História de usuário
+- Eu como cidadão cadastrado, quero receber a confirmação de envio de ocorrência para saber que a ocorrência foi registrada com sucesso.
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/14631d73-bf04-4611-95e3-a41406d6bb43" />
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/4a8d5dad-50ff-4f8b-8476-d4e2cac04bb2" />
+
+- Eu como cidadão cadastrado, quero visualizar todas as ocorrências registradas para poder acompanha-lás.
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/6c7d6633-3c27-4952-9891-4d0ad950574d" />
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/1cb51e87-8147-445e-be2a-e5957a789fdb" />
+  
+- Eu como funcionário do COPOM, quero visualizar um dashboard das áreas de foco das ocorrências e filtrar tipos de ocorrência.  
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/79d13d71-f549-48ed-9c5f-f6cb1cfac021" />    
+  <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/588623ce-3932-484f-9096-5c34cca975bb" />
+
+
+
+
+
+
 
 
 
