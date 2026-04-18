@@ -154,6 +154,15 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 
 
 ## Riscos⚠️
+# Quadro Kanban
+<img width="657" height="917" alt="image" src="https://github.com/user-attachments/assets/47a485f0-5c8e-4061-8f1e-698bbc7d721f" />
+
+<img width="642" height="893" alt="image" src="https://github.com/user-attachments/assets/218486b9-ba6e-4fea-9bd2-0f983b86e39d" />
+
+<img width="430" height="938" alt="image" src="https://github.com/user-attachments/assets/0bba930b-db9f-479c-b703-ea207a22504c" />
+
+
+
 
 
 
