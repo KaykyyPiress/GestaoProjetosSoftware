@@ -126,6 +126,8 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 -  ~~- Criar a **tabela de ocorrências** e métodos de validação, gravação e integração com a API do COPOM.~~ 
 
 - Implementar conexão com email após cadastro
+  <img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
+  
 
   
 ## Próximos passos (Sprint 2)
@@ -133,10 +135,6 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 -  Criar a tela de histórico de ocorrências para o cidadão, permitindo visualização detalhada (data, tipo, status) e filtros de busca.
 -  Implementar o dashboard para funcionários do COPOM, com métricas principais (quantidade de ocorrências, status).
 -  Integrar o dashboard de ocorrências, permitindo atualização em tempo real dos dados exibidos.
-
-  
-
-<img width="1478" height="889" alt="image" src="https://github.com/user-attachments/assets/7794299a-1762-4474-84f7-2e960b4e27f4" />
 
 ## Planning Poker(Sprint2)
 
