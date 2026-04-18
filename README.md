@@ -153,18 +153,15 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
   <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/588623ce-3932-484f-9096-5c34cca975bb" />
 
 
-## Riscos⚠️
-# Quadro Kanban
-<img width="657" height="917" alt="image" src="https://github.com/user-attachments/assets/47a485f0-5c8e-4061-8f1e-698bbc7d721f" />
+## Sprint 2
+### Quadro Kanban Sprint 2:
+<img width="1445" height="893" alt="image" src="https://github.com/user-attachments/assets/d5629e88-49fc-4787-b0c7-9184cba86e9f" />
 
-<img width="642" height="893" alt="image" src="https://github.com/user-attachments/assets/218486b9-ba6e-4fea-9bd2-0f983b86e39d" />
+## Riscos ⚠️
+### Quadro Kanban Riscos:
+<img width="1194" height="839" alt="image" src="https://github.com/user-attachments/assets/c1e66913-8b3c-484c-9e22-9b87ccccb03e" />
 
-<img width="430" height="938" alt="image" src="https://github.com/user-attachments/assets/0bba930b-db9f-479c-b703-ea207a22504c" />
-
-
-
-
-
+<img width="1386" height="857" alt="image" src="https://github.com/user-attachments/assets/a637857d-b6f4-4c3d-a4bc-785cef6df119" />
 
 
 
