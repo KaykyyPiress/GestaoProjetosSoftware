@@ -155,7 +155,7 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
   <img width="275" height="540" alt="image" src="https://github.com/user-attachments/assets/588623ce-3932-484f-9096-5c34cca975bb" />
 
 
-
+## Riscos⚠️
 
 
 
