@@ -146,7 +146,9 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
   - Front-End referente as novas abordagens.
   - Conexão com banco de dados de funcionários do COPOM.
   - Histórias de usuário em teste.
-    
+
+    <img width="1136" height="590" alt="image" src="https://github.com/user-attachments/assets/5bb75d2a-4791-4f24-acda-fedc2fe75139" />
+
 ## Planning Poker(Sprint2)
 
 
