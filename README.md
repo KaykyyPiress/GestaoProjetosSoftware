@@ -136,6 +136,17 @@ A solução busca apoiar principalmente pessoas que, em determinadas situações
 -  Implementar o dashboard para funcionários do COPOM, com métricas principais (quantidade de ocorrências, status).
 -  Integrar o dashboard de ocorrências, permitindo atualização em tempo real dos dados exibidos.
 
+## Status da sprint 2
+
+- Projeto em andamento, com foco atual em:
+  - Envio de confirmação por email para o usuário.
+  - Visualizações das ocorrências feitas pelo usuário(histórico).
+  - Dashbord para funcionário COPOM.
+- Implementado:
+  - Front-End referente as novas abordagens.
+  - Conexão com banco de dados de funcionários do COPOM.
+  - Histórias de usuário em teste.
+    
 ## Planning Poker(Sprint2)
 
 
