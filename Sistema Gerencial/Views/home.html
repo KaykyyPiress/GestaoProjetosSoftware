@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COPOM - Dashboard</title>
+  <link rel="stylesheet" href="../Static/style.css"/>
+</head>
+<body class="home-body">
+
+  <div class="screen active">
+    <div class="container">
+
+      <h1>COPOM - Dashboard</h1>
+      <p>Painel gerencial de visualização de dados</p>
+
+      <!-- KPIs -->
+      <div class="kpi-container">
+        <div class="kpi">
+          <h4>Usuários</h4>
+          <span>120</span>
+        </div>
+
+        <div class="kpi">
+          <h4>Operações</h4>
+          <span>87</span>
+        </div>
+
+        <div class="kpi">
+          <h4>Ativos</h4>
+          <span>34</span>
+        </div>
+      </div>
+
+      <!-- GRÁFICOS -->
+      <div class="charts-container">
+
+        <div class="chart">
+          <h3>Desempenho</h3>
+          <div id="chart-1" class="chart-placeholder">Gráfico 1</div>
+        </div>
+
+        <div class="chart">
+          <h3>Volume de Operações</h3>
+          <div id="chart-2" class="chart-placeholder">Gráfico 2</div>
+        </div>
+
+        <div class="chart">
+          <h3>Análise de Dados</h3>
+          <div id="chart-3" class="chart-placeholder">Gráfico 3</div>
+        </div>
+
+      </div>
+
+      <button type="button" onclick="logout()">Sair</button>
+
+      <div class="link-group">
+        <a href="cadastro.html">Cadastrar Operador</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("usuarioLogado");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

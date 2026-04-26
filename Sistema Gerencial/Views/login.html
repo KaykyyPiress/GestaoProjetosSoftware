@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COPOM - Login</title>
+  <link rel="stylesheet" href="../Static\style.css" />
+</head>
+<body class="login-body">
+
+  <div class="screen active">
+    <div class="container">
+      <h1>COPOM - Login</h1>
+
+      <div class="form-group">
+        <label for="login-email">Email de operador</label>
+        <input type="email" id="login-email" name="email" placeholder="operador@copom.com"/>
+      </div>
+
+      <div class="form-group">
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" name="senha" placeholder="********"/>
+      </div>
+
+      <button type="button" onclick="authLogin()">Entrar</button>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../Scripts/conexao.js"></script>
+  <script src="../Scripts\login.js"></script>
+</body>
+</html>

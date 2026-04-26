@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COPOM - Cadastro</title>
+  <link rel="stylesheet" href="../Static\style.css" />
+</head>
+<body class="cadastro-body">
+
+  <div class="screen active">
+    <div class="container">
+      <h1>COPOM - Cadastro</h1>
+
+      <div class="form-group">
+        <label for="cadastro-nome">Nome de operador</label>
+        <input type="text" id="cadastro-nome" name="nome" placeholder="João Silva"/>
+      </div>
+
+      <div class="form-group">
+        <label for="cadastro-email">Email de operador</label>
+        <input type="email" id="cadastro-email" name="email" placeholder="operador@copom.com"/>
+      </div>
+
+      <div class="form-group">
+        <label for="cadastro-senha">Senha</label>
+        <input type="password" id="cadastro-senha" name="senha" placeholder="********"/>
+      </div>
+
+      <button onclick="handleCadastro()">Cadastrar</button>
+
+      <div class="link-group">
+        <a href="home.html">Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../Scripts/conexao.js"></script>
+  <script src="../Scripts\cadastro.js"></script>
+</body>
+</html>
