@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COPOM - Lista de Ocorrências</title>
+
+  <link rel="stylesheet" href="../Static/style.css" />
+</head>
+
+<body class="home-body">
+
+  <div class="screen active">
+    <div class="container">
+
+      <div class="page-header">
+        <div>
+          <h1>Lista de Ocorrências</h1>
+          <p>Todas as ocorrências cadastradas no sistema</p>
+        </div>
+
+        <a href="home.html" style="display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:10px 18px; background:#34495e; color:#ffffff; text-decoration:none; border:none; border-radius:10px; font-weight:700; white-space:nowrap;">
+  Voltar para Dashboard
+</a>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <h2>Ocorrências Registradas</h2>
+          <span id="total-ocorrencias" class="table-count">0 registros</span>
+        </div>
+
+        <div class="table-filters">
+          <div class="filter-group">
+            <label for="filtro-status">Filtrar por status</label>
+            <select id="filtro-status">
+              <option value="todos">Todos</option>
+              <option value="Aguardando">Aguardando</option>
+              <option value="Visualizado">Visualizado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="tabela-ocorrencias">
+            <colgroup>
+              <col class="col-id-width">
+              <col class="col-tipo-width">
+              <col class="col-data-width">
+              <col class="col-cidade-width">
+              <col class="col-bairro-width">
+              <col class="col-rua-width">
+              <col class="col-status-width">
+              <col class="col-descricao-width">
+              <col class="col-acao-width">
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Cidade</th>
+                <th>Bairro</th>
+                <th>Rua</th>
+                <th>Status</th>
+                <th>Descrição</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabela-body">
+              <tr>
+                <td colspan="9" class="estado-tabela">Carregando ocorrências...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../Scripts/conexao.js"></script>
+  <script src="../Scripts/ocorrencias.js"></script>
+
+</body>
+</html>
