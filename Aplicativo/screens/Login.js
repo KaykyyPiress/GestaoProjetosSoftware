@@ -1,78 +1,107 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert, ScrollView } from 'react-native';
-// Note que não precisamos mais importar ícones aqui, pois usaremos a logo.
-import firebase from '../config/config';
+import {
+  View, Text, TextInput, TouchableOpacity,
+  StyleSheet, Image, ScrollView
+} from 'react-native';
+import { supabase } from '../components/connectBD';
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: '', senha: '' };
-  }
-  
-  logar = () => {
-  const { email, senha } = this.state;
-  
-  // Lógica temporária: aceita qualquer coisa que não esteja vazia
-  if (email && senha) {
-    this.props.navigation.replace('HomeApp'); 
-  } else {
-    Alert.alert('Aviso', 'Por favor, preencha algo para testar o login.');
+    this.state = {
+      email: '',
+      senha: '',
+      carregando: false,
+      erros: {},
+    };
   }
 
-  /* Deixaremos o Firebase guardado aqui para depois:
-  firebase.auth().signInWithEmailAndPassword(email.trim().toLowerCase(), senha)
-    .then(() => { this.props.navigation.replace('HomeApp'); })
-    .catch(error => Alert.alert("Erro", "Falha no login"));
-  */
-}
-
-  /*logar = () => {
+  validar() {
     const { email, senha } = this.state;
-    if (!email || !senha) {
-      Alert.alert('Preencha os campos', 'Por favor, insira e-mail e senha.');
+    const erros = {};
+    if (!email.trim()) {
+      erros.email = 'Informe o e-mail.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      erros.email = 'Informe um e-mail válido.';
+    }
+    if (!senha) erros.senha = 'Informe a senha.';
+    return erros;
+  }
+
+  logar = async () => {
+    const erros = this.validar();
+    if (Object.keys(erros).length > 0) { this.setState({ erros }); return; }
+
+    this.setState({ carregando: true, erros: {} });
+
+    const { email, senha } = this.state;
+
+    const { data, error } = await supabase
+      .from('table_cidadao')
+      .select('*')
+      .eq('email_cidadao', email.trim().toLowerCase())
+      .eq('senha_cidadao', senha)
+      .single();
+
+    this.setState({ carregando: false });
+
+    if (error || !data) {
+      this.setState({
+        erros: { geral: 'E-mail ou senha incorretos. Verifique seus dados e tente novamente.' },
+      });
       return;
     }
 
-    firebase.auth().signInWithEmailAndPassword(email.trim().toLowerCase(), senha)
-      .then(() => {
-        // Redireciona para a central, limpando o histórico de navegação do login
-        this.props.navigation.replace('HomeApp');
-      })
-      .catch(error => Alert.alert("Erro de Acesso", "E-mail ou senha incorretos."));
-  }*/
+    // ← passa cpf e nome para o HomeApp
+    this.props.navigation.replace('HomeApp', {
+      cpf:  data.cpf_cidadao,
+      nome: data.nome_cidadao,
+    });
+  };
 
   render() {
+    const { erros, carregando } = this.state;
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        {/* Adicionando sua logo aqui */}
         <View style={styles.header}>
-          <Image 
-            source={require('../assets/logo.png')} // Caminho para sua logo
-            style={styles.logo}
-            resizeMode="contain" // Mantém a proporção da imagem
-          />
+          <Image source={require('../assets/logo.png')} style={styles.logo} resizeMode="contain" />
           <Text style={styles.subtitulo}>Sua conexão direta com a segurança</Text>
         </View>
 
         <View style={styles.form}>
+          {erros.geral && (
+            <View style={styles.boxErro}>
+              <Text style={styles.txtErroGeral}>{erros.geral}</Text>
+            </View>
+          )}
+
           <Text style={styles.label}>E-mail:</Text>
-          <TextInput 
-            style={styles.input} 
-            placeholder="exemplo@email.com" 
+          <TextInput
+            style={[styles.input, erros.email && styles.inputErro]}
+            placeholder="exemplo@email.com"
             keyboardType="email-address"
-            onChangeText={(txt) => this.setState({email: txt})}
+            autoCapitalize="none"
+            value={this.state.email}
+            onChangeText={txt => this.setState({ email: txt, erros: { ...this.state.erros, email: null, geral: null } })}
           />
+          {erros.email && <Text style={styles.erroTexto}>{erros.email}</Text>}
 
           <Text style={styles.label}>Senha:</Text>
-          <TextInput 
-            style={styles.input} 
-            placeholder="Sua senha" 
-            secureTextEntry 
-            onChangeText={(txt) => this.setState({senha: txt})}
+          <TextInput
+            style={[styles.input, erros.senha && styles.inputErro]}
+            placeholder="Sua senha"
+            secureTextEntry
+            value={this.state.senha}
+            onChangeText={txt => this.setState({ senha: txt, erros: { ...this.state.erros, senha: null, geral: null } })}
           />
+          {erros.senha && <Text style={styles.erroTexto}>{erros.senha}</Text>}
 
-          <TouchableOpacity style={styles.botao} onPress={this.logar}>
-            <Text style={styles.txtBotao}>ENTRAR</Text>
+          <TouchableOpacity
+            style={[styles.botao, carregando && { opacity: 0.7 }]}
+            onPress={this.logar}
+            disabled={carregando}
+          >
+            <Text style={styles.txtBotao}>{carregando ? 'ENTRANDO...' : 'ENTRAR'}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -80,15 +109,18 @@ export default class Login extends React.Component {
   }
 }
 
-// Estilos adaptados com as cores da logo
 const styles = StyleSheet.create({
-  container: { flexGrow: 1, padding: 30, backgroundColor: '#fff', justifyContent: 'center' },
-  header: { alignItems: 'center', marginBottom: 50 },
-  logo: { width: 220, height: 100 },
-  subtitulo: { fontSize: 16, color: '#555', marginTop: 10, textAlign: 'center' },
-  form: { width: '100%' },
-  label: { fontSize: 16, color: '#333', fontWeight: 'bold', marginBottom: 5 },
-  input: { borderBottomWidth: 1, borderBottomColor: '#ccc', marginBottom: 25, padding: 10, fontSize: 16 },
-  botao: { backgroundColor: '#1a4f8b', padding: 18, borderRadius: 10, alignItems: 'center' }, // Azul da logo
-  txtBotao: { color: '#fff', fontWeight: 'bold', fontSize: 18 }
+  container:    { flexGrow: 1, padding: 25, backgroundColor: '#fff' },
+  header:       { alignItems: 'center', marginBottom: 30 },
+  logo:         { width: 220, height: 100 },
+  subtitulo:    { fontSize: 14, color: '#1a4f8b', marginTop: 8, textAlign: 'center' },
+  form:         { width: '100%' },
+  label:        { fontSize: 14, color: '#333', fontWeight: 'bold', marginBottom: 2 },
+  input:        { borderBottomWidth: 1, borderBottomColor: '#ddd', marginBottom: 4, padding: 8, fontSize: 16 },
+  inputErro:    { borderBottomColor: '#d32f2f' },
+  erroTexto:    { color: '#d32f2f', fontSize: 12, marginBottom: 12 },
+  boxErro:      { backgroundColor: '#ffebee', borderLeftWidth: 4, borderLeftColor: '#d32f2f', borderRadius: 6, padding: 14, marginBottom: 20 },
+  txtErroGeral: { color: '#d32f2f', fontWeight: 'bold', fontSize: 14 },
+  botao:        { backgroundColor: '#1a4f8b', padding: 16, borderRadius: 10, alignItems: 'center', marginTop: 15 },
+  txtBotao:     { color: '#fff', fontWeight: 'bold', fontSize: 16 },
 });
